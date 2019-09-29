@@ -1,15 +1,14 @@
 pipeline
 {
   agent any
-  
-  
+    
   stages 
   {
-    stage ('SCM checkout') {
+    stages ('SCM checkout') {
     git 'https://github.com/vinods005/jenkins_pipeline_hello.git'
     }
 	
-	stage ('Testing Stage') {
+	stages ('Testing Stage') {
 	
 	
 	steps{
