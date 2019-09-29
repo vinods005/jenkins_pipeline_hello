@@ -4,18 +4,16 @@ pipeline
     
   stages 
   {
-    stages ('SCM checkout') {
+    stage ('SCM checkout') {
     git 'https://github.com/vinods005/jenkins_pipeline_hello.git'
-    }
-	
-	stages ('Testing Stage') {
-	
-	
-	steps{
-    withMaven(maven: 'Local Maven') {
-    sh 'mvn test'
-    }
         }
   }
- }
+	
+   stage ('Testing Stage') {
+	steps{
+          withMaven(maven: 'Local Maven') {
+          sh 'mvn test'
+          }
+      }
+  }
 }
